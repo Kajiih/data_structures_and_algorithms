@@ -4,6 +4,9 @@ Disjoint Set (DSU), or Union Find.
 A data structure representing partitions of elements (like equivalence classes)
 with efficient set union (merge) and find (membership test).
 
+
+More: https://cp-algorithms.com/data_structures/disjoint_set_union.html
+
 Use cases:
 - Minimum Spanning Tree (Kruskal)
 - Counting connected components
@@ -19,7 +22,7 @@ Time Complexity with path compression and union by rank:
 - Union, Find: O(a(n))
 
 
-Reminders:
+Tips:
 - Rank is lower or equal to the height of the tree of a given class.
 - In union, put the lowest in the largest to have the minimum height.
 """
