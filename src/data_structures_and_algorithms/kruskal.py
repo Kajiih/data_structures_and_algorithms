@@ -2,6 +2,7 @@
 Kruskal's algorithm.
 
 Return the edges forming a minimum spanning tree of a graph.
+It works for negative weights.
 
 Algorithm:
 - Sort the edges.
@@ -18,18 +19,15 @@ Tips:
 """
 
 import operator
-from collections.abc import Sequence
 
 
-def kruskal(n: int, edges: Sequence[tuple[int, int, float]]) -> list[tuple[int, int, float]]:  # noqa: C901
+def kruskal[T: int | float](n: int, edges: list[tuple[int, int, T]]) -> list[tuple[int, int, T]]:
     """
     Return the edges of a minimum spanning tree.
 
     Edges are given as:  (u, v, w), where w is the weight.
     """
     # 1. Sort the edges
-    if not isinstance(edges, list):
-        edges = list(edges)
     edges.sort(key=operator.itemgetter(2))
 
     # 2. Implement a disjoint set

@@ -1,5 +1,6 @@
 import pytest
-from data_structures_and_algorithms.khan import khan_dfs, khan_bfs
+
+from data_structures_and_algorithms.khan import khan_bfs, khan_dfs
 
 
 # Fixture to provide implementations
@@ -61,6 +62,7 @@ def test_visited_twice(khan_func):
 def test_khan_cycle_detection_propagation(khan_func):
     """
     Test case to verify that the cycle detection is properly propagated in the dfs function.
+
     The graph contains a cycle, and the traversal should stop as soon as the cycle is detected.
     """
     n = 6
