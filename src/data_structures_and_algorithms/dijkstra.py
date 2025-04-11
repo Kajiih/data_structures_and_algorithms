@@ -27,6 +27,7 @@ Tips:
 - In base case, check prev to see if the node is visited and update prev
 - In loop, check new neighbor distance and update and push if lower to avoid useless push cost
 - Remember to reverse the path at the end
+- We need to check visited twice (in base case in the loop and to save log(n) time for insertion of useless high costs if already visited)
 """
 
 from collections.abc import Iterable
