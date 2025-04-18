@@ -37,12 +37,11 @@ class DisjointSet:
 
     def find(self, x: int) -> int:
         """Return the class index of x."""
-        par = x
-        while self.parent[par] != par:
-            self.parent[par] = self.parent[self.parent[par]]  # Path compression
-            par = self.parent[par]
+        while self.parent[x] != x:
+            self.parent[x] = self.parent[self.parent[x]]  # Path compression
+            x = self.parent[x]
 
-        return par
+        return x
 
     def union(self, x: int, y: int) -> None:
         """Merge x's and y's classes ."""

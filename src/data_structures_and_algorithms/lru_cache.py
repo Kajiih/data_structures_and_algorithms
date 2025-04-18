@@ -2,7 +2,7 @@
 LRU cache implementation with a hash map and a linked list.
 
 Tips:
-- liked list with values and hash map from key to nodes
+- linked list with values and hash map from key to nodes
 - Remember to update nodes_map and size
 - Edge case when the moved node is lru or mru
 """

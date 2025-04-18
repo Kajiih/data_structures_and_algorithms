@@ -29,7 +29,7 @@ def binary_search(nums: list[int], x: int) -> int | None:
     return None
 
 
-def bisect_right(a: list[int], x: int, lo: int = 0, hi: int | None = None) -> int:
+def bisect_right(arr: list[int], x: int, lo: int = 0, hi: int | None = None) -> int:
     """
     Return the rightmost insertion point of x in a for a to stay sorted after insertion.
 
@@ -37,20 +37,20 @@ def bisect_right(a: list[int], x: int, lo: int = 0, hi: int | None = None) -> in
     than x (or the length of the list).
     """
     if hi is None:
-        hi = len(a)
+        hi = len(arr)
     assert lo >= 0
-    assert hi <= len(a)
+    assert hi <= len(arr)
 
     while lo < hi:
         mid = (lo + hi) // 2
-        if a[mid] > x:
+        if arr[mid] > x:
             hi = mid
         else:
             lo = mid + 1
     return lo
 
 
-def bisect_left(a: list[int], x: int, lo: int = 0, hi: int | None = None) -> int:
+def bisect_left(arr: list[int], x: int, lo: int = 0, hi: int | None = None) -> int:
     """
     Return the leftmost insertion point of x in a for a to stay sorted after insertion.
 
@@ -58,13 +58,13 @@ def bisect_left(a: list[int], x: int, lo: int = 0, hi: int | None = None) -> int
     equal to x (or the length of the list).
     """
     if hi is None:
-        hi = len(a)
+        hi = len(arr)
     assert lo >= 0
-    assert hi <= len(a)
+    assert hi <= len(arr)
 
     while lo < hi:
         mid = (lo + hi) // 2
-        if a[mid] >= x:
+        if arr[mid] >= x:
             hi = mid
         else:
             lo = mid + 1

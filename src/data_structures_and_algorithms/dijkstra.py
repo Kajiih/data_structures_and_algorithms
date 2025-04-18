@@ -49,7 +49,7 @@ def dijkstra(
         neighbors[i].append((w, j))  # (weight, node)
 
     # BFS with priority queue
-    pq = [(0, src, -1)]
+    pq = [(0, src, -1)]  # dist, node, prev
     dist = [INF] * n
     dist[src] = 0
     prev = [-1] * n
@@ -57,7 +57,7 @@ def dijkstra(
     while pq:
         node_dist, node, prev_node = heappop(pq)
         # Base case
-        if prev[node] != -1:
+        if prev[node] != -1: # visited
             continue
         prev[node] = prev_node
         if node == dest:
